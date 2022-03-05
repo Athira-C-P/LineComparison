@@ -24,17 +24,20 @@ public class LineComparison {
         System.out.println("Enter the value of y4 : ");
         int y4 = in.nextInt();
 
+        Double distance1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        Double distance2 = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+        System.out.println("Length of the line L1 is : " + distance1);
+        System.out.println("Length of the line L2 is : " + distance2);
 
-        Double distance1 = Math.sqrt( ( x2 - x1 ) * ( x2 - x1 ) + ( y2 - y1 ) * ( y2 - y1 ));
-        Double distance2 = Math.sqrt( ( x4 - x3 ) * ( x4 - x3 ) + ( y4 - y3 ) * ( y4 - y3 ));
-        System.out.println("Length of the line L1 is : "+distance1);
-        System.out.println("Length of the line L2 is : "+distance2);
-
-            if(distance1.equals(distance2))
-                System.out.println("Both lines are equal.");
-            else
-            {
-                System.out.println("Lines are not equal.");
-            }
+        int check = distance1.compareTo(distance2);
+        if (check == 0) {
+            System.out.println("Both lines are equal.");
+        }
+        else if (check > 0) {
+            System.out.println("Line L1 is greater than Line L2.");
+        }
+        else {
+            System.out.println("Line L1 is less than Line L2.");
+        }
     }
 }
