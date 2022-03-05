@@ -1,10 +1,11 @@
 package com.bridgelabz;
-
+import java.util.Objects;
 import java.util.Scanner;
 public class LineComparison {
     public static void main(String[] args) {
-        System.out.println("Welcome to line comparison computation program");
+        System.out.println("Welcome to Line Comparison Computation Program");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter coordinates of line L1");
         System.out.println("Enter the value of x1 : ");
         int x1 = in.nextInt();
         System.out.println("Enter the value of y1 : ");
@@ -13,9 +14,27 @@ public class LineComparison {
         int x2 = in.nextInt();
         System.out.println("Enter the value of y2 : ");
         int y2 = in.nextInt();
+        System.out.println("Enter coordinates of line L2");
+        System.out.println("Enter the value of x3 : ");
+        int x3 = in.nextInt();
+        System.out.println("Enter the value of y3 : ");
+        int y3 = in.nextInt();
+        System.out.println("Enter the value of x4 : ");
+        int x4 = in.nextInt();
+        System.out.println("Enter the value of y4 : ");
+        int y4 = in.nextInt();
 
-        double distance = Math.sqrt( ( x2 - x1 ) * ( x2 - x1 ) + ( y2 - y1 ) * ( y2 - y1 ));
 
-        System.out.println("The distance is : "+ distance);
+        Double distance1 = Math.sqrt( ( x2 - x1 ) * ( x2 - x1 ) + ( y2 - y1 ) * ( y2 - y1 ));
+        Double distance2 = Math.sqrt( ( x4 - x3 ) * ( x4 - x3 ) + ( y4 - y3 ) * ( y4 - y3 ));
+        System.out.println("Length of the line L1 is : "+distance1);
+        System.out.println("Length of the line L2 is : "+distance2);
+
+            if(distance1.equals(distance2))
+                System.out.println("Both lines are equal.");
+            else
+            {
+                System.out.println("Lines are not equal.");
+            }
     }
 }
